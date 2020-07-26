@@ -1,0 +1,12 @@
+hello
+a.out
+out
+out.s
+
+*.o
+test_programs/one
+
+build/
+
+.gdb_history
+TAGS

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./link
+./out
+
+echo "Returned $?"

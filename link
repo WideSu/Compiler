@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -ex
+
+as out.s -o out.o --32
+ld -m elf_i386 -s -o out out.o
+rm out.o
