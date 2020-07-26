@@ -95,16 +95,18 @@ void emit_function_epilogue(FILE *out) {
     fprintf(out, "\n");
 }
 
-void write_header(FILE *out) { emit_header(out, "    .text"); }
+void write_header(FILE *out) { 
+     emit_header(out, "    .text"); 
+}
 
 void write_footer(FILE *out) {
     // TODO: this will break if a user defines a function called '_start'.
-    emit_function_declaration(out, "_start");
-    emit_function_prologue(out);
+    //emit_function_declaration(out, "_start");
+    //emit_function_prologue(out);
+    emit_header(out, "    .global main"); 
     emit_instr(out, "call", "main");
-    emit_instr(out, "mov", "%eax, %ebx");
-    emit_instr(out, "mov", "$1, %eax");
-    emit_instr(out, "int", "$0x80");
+    emit_instr(out, "mov", "r0, #0");
+    emit_instr(out, "bx", "lr");
 }
 
 void write_syntax(FILE *out, Syntax *syntax, Context *ctx) {
@@ -256,13 +258,14 @@ void write_syntax(FILE *out, Syntax *syntax, Context *ctx) {
 void write_assembly(Syntax *syntax) {
     FILE *out = fopen("out.s", "wb");
 
-    write_header(out);
+    //write_header(out);
 
     Context *ctx = new_context();
 
-    write_syntax(out, syntax, ctx);
+    //write_syntax(out, syntax, ctx);
     write_footer(out);
 
     context_free(ctx);
     fclose(out);
 }
+

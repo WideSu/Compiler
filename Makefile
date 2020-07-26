@@ -3,18 +3,18 @@ CFLAGS = -Wall -Wextra -g -O0 -std=gnu99 -fstack-protector-all -ftrapv
 
 BUILD_DIR = build
 
-all:$(BUILD_DIR)/sysy
+all:$(BUILD_DIR)/compiler
 
 $(BUILD_DIR):
 	@mkdir $(BUILD_DIR)
 
-$(BUILD_DIR)/lex.yy.c: babyc_lex.l $(BUILD_DIR)/y.tab.h
+$(BUILD_DIR)/lex.yy.c: sysy_lex.l $(BUILD_DIR)/y.tab.h
 	lex -t $< > $@
 
 $(BUILD_DIR)/lex.yy.o: $(BUILD_DIR)/lex.yy.c
 	$(CC) $(CFLAGS) -Wno-unused-function -c $< -o $@
 
-$(BUILD_DIR)/y.tab.c $(BUILD_DIR)/y.tab.h: babyc_parse.y
+$(BUILD_DIR)/y.tab.c $(BUILD_DIR)/y.tab.h: sysy_parse.y
 	yacc -d $< -o $(BUILD_DIR)/y.tab.c
 
 $(BUILD_DIR)/y.tab.o: $(BUILD_DIR)/y.tab.c syntax.c stack.c
@@ -38,14 +38,14 @@ $(BUILD_DIR)/context.o: context.c
 $(BUILD_DIR)/environment.o: environment.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(BUILD_DIR)/sysy: $(BUILD_DIR) $(BUILD_DIR)/lex.yy.o $(BUILD_DIR)/y.tab.o $(BUILD_DIR)/syntax.o $(BUILD_DIR)/environment.o $(BUILD_DIR)/assembly.o $(BUILD_DIR)/stack.o $(BUILD_DIR)/context.o $(BUILD_DIR)/list.o main.c
+$(BUILD_DIR)/compiler: $(BUILD_DIR) $(BUILD_DIR)/lex.yy.o $(BUILD_DIR)/y.tab.o $(BUILD_DIR)/syntax.o $(BUILD_DIR)/environment.o $(BUILD_DIR)/assembly.o $(BUILD_DIR)/stack.o $(BUILD_DIR)/context.o $(BUILD_DIR)/list.o main.c
 	$(CC) $(CFLAGS) -o $@ main.c $(BUILD_DIR)/lex.yy.o $(BUILD_DIR)/y.tab.o $(BUILD_DIR)/syntax.o $(BUILD_DIR)/environment.o $(BUILD_DIR)/assembly.o $(BUILD_DIR)/stack.o $(BUILD_DIR)/context.o $(BUILD_DIR)/list.o
 
 .PHONY: clean
 clean:
 	rm -rf $(BUILD_DIR)
 
-$(BUILD_DIR)/run_tests: run_tests.c $(BUILD_DIR)/sysy
+$(BUILD_DIR)/run_tests: run_tests.c $(BUILD_DIR)/compiler
 	$(CC) $(CFLAGS) $< -o $@
 
 .PHONY: test

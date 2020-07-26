@@ -3,19 +3,20 @@
 [![Build Status](https://travis-ci.org/Wilfred/babyc.svg?branch=master)](https://travis-ci.org/Wilfred/babyc)
 
 An educational foray into compiler writing. Written in C, compiling C
-to x86 assembly
-([handy x86 reference site](http://x86.renejeschke.de/),
+to Arm-v7 assembly
+([ARM assembler in Raspberry Pi](https://thinkingeek.com/arm-assembler-raspberry-pi/),
+[ARM Realview](https://developer.arm.com/documentation/),
 [assembly directives reference](https://www.sourceware.org/binutils/docs-2.12/as.info/Pseudo-Ops.html),
-[System V ABI reference](http://www.uclibc.org/docs/psABI-i386.pdf)).
+[System V ABI reference](https://www.uclibc.org/docs/psABI-arm.pdf)).
 
 Technically targetting C11
 ([standard PDF](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)),
-but we will implement such a small subset of C that it's academic.
+but we will implement such a small subset of C for a competition.
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc/generate-toc again -->
 **Table of Contents**
 
-- [Babyc](#babyc)
+- [Sysy](#sysy)
     - [Current feature set](#current-feature-set)
     - [License](#license)
     - [Usage](#usage)
@@ -62,17 +63,17 @@ Compiling babyc:
 Usage:
 
     # Run it, producing an assembly file.
-    $ build/babyc test_programs/immediate__return_1.c
+    $ build/compiler tests/immediate__return_1.c
     # Use the GNU toolchain to assemble and link.
     $ ./link
 
 Viewing the code after preprocessing:
 
-    $ build/babyc --dump-expansion test_programs/if_false__return_2.c
+    $ build/compiler --dump-expansion tests/if_false__return_2.c
 
 Viewing the AST:
 
-    $ build/babyc --dump-ast test_programs/if_false__return_2.c
+    $ build/babyc --dump-ast tests/if_false__return_2.c
 
 Running tests:
 

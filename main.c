@@ -11,16 +11,16 @@
 #include "assembly.h"
 
 void print_help() {
-    printf("Babyc is a very basic C compiler.\n\n");
+    printf("Sysy is a very basic C compiler.\n\n");
     printf("To compile a file:\n");
-    printf("    $ babyc foo.c\n");
+    printf("    $ sysy foo.c\n");
     printf("To output the AST without compiling:\n");
-    printf("    $ babyc --dump-ast foo.c\n");
+    printf("    $ sysy --dump-ast foo.c\n");
     printf("To output the preprocessed code without parsing:\n");
-    printf("    $ babyc --dump-expansion foo.c\n");
+    printf("    $ sysy --dump-expansion foo.c\n");
     printf("To print this message:\n");
-    printf("    $ babyc --help\n\n");
-    printf("For more information, see https://github.com/Wilfred/babyc\n");
+    printf("    $ sysy --help\n\n");
+    printf("For more information, see https://github.com/WideSu/Compiler.git\n");
 }
 
 extern Stack *syntax_stack;
