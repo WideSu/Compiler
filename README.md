@@ -1,7 +1,5 @@
 # Sysy
 
-[![Build Status]](https://github.com/WideSu/Compiler)
-
 An educational foray into compiler writing. Written in C, compiling C
 to Arm-v7 assembly
 ([ARM assembler in Raspberry Pi](https://thinkingeek.com/arm-assembler-raspberry-pi/),

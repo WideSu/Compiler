@@ -1,5 +1,5 @@
-#ifndef BABYC_LIST_HEADER
-#define BABYC_LIST_HEADER
+#ifndef SYSY_LIST_HEADER
+#define SYSY_LIST_HEADER
 
 typedef struct List {
     int size;

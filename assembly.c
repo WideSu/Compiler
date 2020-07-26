@@ -104,7 +104,7 @@ void write_footer(FILE *out) {
     //emit_function_declaration(out, "_start");
     //emit_function_prologue(out);
     emit_header(out, "    .global main"); 
-    emit_instr(out, "call", "main");
+    emit_header(out, "main:");
     emit_instr(out, "mov", "r0, #0");
     emit_instr(out, "bx", "lr");
 }
@@ -187,7 +187,7 @@ void write_syntax(FILE *out, Syntax *syntax, Context *ctx) {
         emit_return(out);
 
     } else if (syntax->type == FUNCTION_CALL) {
-        emit_instr_format(out, "call", syntax->function_call->function_name);
+        //emit_instr_format(out, "call", syntax->function_call->function_name);
 
     } else if (syntax->type == IF_STATEMENT) {
         IfStatement *if_statement = syntax->if_statement;

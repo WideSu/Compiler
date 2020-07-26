@@ -71,10 +71,10 @@ int run_test(char *test_program_name) {
 }
 
 int main() {
-    DIR *test_dir = opendir("test_programs");
+    DIR *test_dir = opendir("tests");
 
     if (test_dir == NULL) {
-        printf("Could not open test_programs directory!");
+        printf("Could not open tests directory!");
         return 1;
     }
 

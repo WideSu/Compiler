@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "syntax.h"
 
-#ifndef BABYC_ASSEMBLY_HEADER
-#define BABYC_ASSEMBLY_HEADER
+#ifndef SYSY_ASSEMBLY_HEADER
+#define SYSY_ASSEMBLY_HEADER
 
 void emit_header(FILE *out, char *name);
 

@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
-#ifndef BABYC_ENV_HEADER
-#define BABYC_ENV_HEADER
+#ifndef SYSY_ENV_HEADER
+#define SYSY_ENV_HEADER
 
 typedef struct VarWithOffset {
     char *var_name;
