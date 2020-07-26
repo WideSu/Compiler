@@ -1,6 +1,6 @@
-# Babyc
+# Sysy
 
-[![Build Status](https://travis-ci.org/Wilfred/babyc.svg?branch=master)](https://travis-ci.org/Wilfred/babyc)
+[![Build Status]](https://github.com/WideSu/Compiler)
 
 An educational foray into compiler writing. Written in C, compiling C
 to Arm-v7 assembly
