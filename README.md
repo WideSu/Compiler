@@ -53,7 +53,7 @@ GPL v2 license.
 You will need `clang`, `lex` and `yacc` installed. GNU Bison is known
 to work, other yacc implementations may not.
 
-Compiling babyc:
+Compiling sysy:
 
     # Compile the compiler.
     $ make
@@ -71,7 +71,7 @@ Viewing the code after preprocessing:
 
 Viewing the AST:
 
-    $ build/babyc --dump-ast tests/if_false__return_2.c
+    $ build/sysy --dump-ast tests/if_false__return_2.c
 
 Running tests:
 
