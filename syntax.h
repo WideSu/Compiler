@@ -1,7 +1,7 @@
 #include "list.h"
 
-#ifndef BABYC_SYNTAX_HEADER
-#define BABYC_SYNTAX_HEADER
+#ifndef SYSY_SYNTAX_HEADER
+#define SYSY_SYNTAX_HEADER
 
 typedef enum {
     IMMEDIATE,
