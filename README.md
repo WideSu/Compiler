@@ -1,6 +1,6 @@
 # Sysy
 
-An educational foray into compiler writing. Written in C, compiling C
+An educational foray into compiler writing. Written in C, compiling Sysy(a C- language defined by the contest)
 to Arm-v7 assembly
 ([ARM assembler in Raspberry Pi](https://thinkingeek.com/arm-assembler-raspberry-pi/),
 [ARM Realview](https://developer.arm.com/documentation/),
