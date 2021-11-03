@@ -1,4 +1,4 @@
-# Sysy
+# Compiler for an C- language
 
 It's a compiler written in C, which can compile Sysy(a C- language defined by the contest)
 into Arm-v7 assembly on CentOS server, and run on Raspberry Pi.
