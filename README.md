@@ -1,12 +1,12 @@
 # Sysy
 
-An educational foray into compiler writing. Written in C, compiling Sysy(a C- language defined by the contest)
-to Arm-v7 assembly
+It's a compiler written in C, which can compile Sysy(a C- language defined by the contest)
+into Arm-v7 assembly on CentOS server, and run on Raspberry Pi.
 ([ARM assembler in Raspberry Pi](https://thinkingeek.com/arm-assembler-raspberry-pi/),
 [ARM Realview](https://developer.arm.com/documentation/),
 [assembly directives reference](https://www.sourceware.org/binutils/docs-2.12/as.info/Pseudo-Ops.html),
 [System V ABI reference](https://www.uclibc.org/docs/psABI-arm.pdf)).
-
+![image](https://user-images.githubusercontent.com/44923423/140073619-edd8f6f0-fce2-4fb2-87df-022c7d0d00b4.png)
 Technically targetting C11
 ([standard PDF](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)),
 but we will implement such a small subset of C for a competition.
